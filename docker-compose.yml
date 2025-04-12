@@ -10,4 +10,11 @@ services:
       - /app/node_modules
     environment:
       - NODE_ENV=development
+      - NEXT_PUBLIC_API_URL=http://localhost:3001
     command: npm run dev
+    networks:
+      - chat-app-network
+
+networks:
+  chat-app-network:
+    external: true
